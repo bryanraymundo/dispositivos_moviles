@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React, { useState } from 'react'
-import { Text, View, TextInput, Button, StyleSheet, Alert} from 'react-native'
-
+import { Text, View, TextInput, Button, StyleSheet, Alert, Image} from 'react-native'
 
 const Login = ( props ) => {
 
@@ -9,19 +8,25 @@ const Login = ( props ) => {
   const [user, setUser] = useState()
   const [password, setPassword] = useState()
 
+  const Separator = () => (
+    <View style={styles.separator} />
+  );
+  
+
   return(
     <View style = {styles.container}>
       <Text  style = {styles.text}>¡Bienvenido!</Text>
       <TextInput placeholder="Ingresa tu correo electronico"onChangeText={setUser} style = {styles.input}/>
       <TextInput secureTextEntry={true} placeholder="Contraseña"  style = {styles.input} onChangeText={setPassword} />
-      <Button title="Enviar"  style = {styles.button} onPress =
+      <Button title="Enviar"  style = {styles.button} color="#2e90db" onPress =
       { () => { 
         console.log(`Usuario: ${user} Pass: ${password}`) 
         navigation.navigate('Home')} 
       }/>
+      <Separator></Separator>
      <Button
         title="Olvidé la contraseña"
-        color="#f194ff"
+        color="#eb5446"
         onPress={() => Alert.alert('Acuerdate XD')}
       />
     </View>
@@ -31,7 +36,6 @@ const Login = ( props ) => {
     text:{
       position: 'absolute',
       top: 50,
-      color: "#21afc",
       fontSize: 30
     },
 
@@ -54,7 +58,12 @@ const Login = ( props ) => {
     button:
     {
       marginBottom: 30
-    }
+    },
+    separator: {
+      marginVertical: 8,
+      borderBottomColor: '#737373',
+      borderBottomWidth: StyleSheet.hairlineWidth,
+    },
   });
 
 
