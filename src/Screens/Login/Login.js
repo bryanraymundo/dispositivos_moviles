@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React, { useState } from 'react'
 import { Text, View, TextInput, Button, StyleSheet, Alert, Image} from 'react-native'
-
 const Login = ( props ) => {
 
   const { navigation } = props
@@ -21,7 +20,7 @@ const Login = ( props ) => {
       <Button title="Enviar"  style = {styles.button} color="#2e90db" onPress =
       { () => { 
         console.log(`Usuario: ${user} Pass: ${password}`) 
-        navigation.navigate('Home')} 
+        navigation.navigate('TabNavigation')} 
       }/>
       <Separator></Separator>
      <Button
