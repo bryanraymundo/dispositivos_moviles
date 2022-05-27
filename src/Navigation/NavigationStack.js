@@ -1,20 +1,27 @@
 import React from "react";
 import { createStackNavigator} from '@react-navigation/stack';
 import LoginForm from '../Screens/Login/Login'
-import NavigationTab from "./NavigationTab";
-import { navigationRef } from "../Root Navigation/RootNavigation";
+import Home from "../Screens/Home/Home";
+// import NavigationTab from "./NavigationTab";
+
 
 // Se crea la constante del stack
 const Stack = createStackNavigator();
 
-const NavigationStack = (props) => {
+const NavigationStack = ()=> {
     return (
-              <Stack.Navigator screenOptions={{headerShown: false}} ref={navigationRef}>
-                {/* Se arma la estructura del stack con el nombre de la constante que ya definimos */}
-                <Stack.Screen name="Login" component={LoginForm} screenOptions={{headerShown: false}}/>
-                <Stack.Screen name="TabNavigation" component={NavigationTab} screenOptions={{headerShown: false}}/>
-              </Stack.Navigator>
-    );
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      {/* Se arma la estructura del stack con el nombre de la constante que ya definimos */}
+      <Stack.Screen 
+        name="Login" 
+        component={LoginForm} 
+        screenOptions={{headerShown: false}}/>
+      <Stack.Screen 
+        name="Home"
+        component={Home} 
+        screenOptions={{headerShown: false}}/>
+    </Stack.Navigator>
+    )
 }
 
 export default NavigationStack;

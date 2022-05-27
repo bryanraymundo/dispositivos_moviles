@@ -1,15 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import RootNavigation from '../Root Navigation/RootNavigation'
 
-const Header = ({navigation}) => {
+const Header = (props) => {
     return(
       <View style={styles.container}>
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('LoginForm')}><Text>Nose</Text>
-        </TouchableOpacity>
+        {/* <TouchableOpacity  onPress={() => RootNavigation.navigate('LoginForm')}><Text>Atras</Text>
+        </TouchableOpacity> */}
       </View>
       <View>
-        <Text style={styles.title}>PokéDex</Text>
+        <Text style={styles.title}>Tipos Pokemon</Text>
       </View>
     </View>
     )
