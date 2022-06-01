@@ -7,6 +7,7 @@ const Login = (props) => {
 
 
   const { navigation } = props
+
   const [user, setUser] = useState()
   const [password, setPassword] = useState()
 
@@ -24,35 +25,44 @@ const Login = (props) => {
 
   }
 
-
+  
+  
   return (
+    <>
+    <Separator></Separator>
     <View style={styles.container}>
-      <Separator></Separator>
-      <TouchableOpacity onPress={()=> {console.log("Me tocaste")}}><ButtonLogin/></TouchableOpacity>
+      <View style={styles.caja}></View>
+      <TouchableOpacity onPress={()=> {navigation.navigate("Home")}}><ButtonLogin/></TouchableOpacity>
     </View>
+    </>
   )
 }
 const styles = StyleSheet.create({
 
   container: {
-    color: '#ff0000',
     flex: 1,
-    backgroundColor: '#ff0000',
+    backgroundColor: '#ffff',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 400
+    justifyContent: 'center'
+  },
+  caja:{
+    backgroundColor: '#ff0000',
+    position: 'absolute',
+    top: 0,
+    width: 450,
+    height: 410,
+    borderBottomColor: 'black',
+    borderBottomWidth: 12
   },
   separator: {
     position: 'absolute',
-    top: 420,
+    top: 150,
     width: 450,
     height: 10,
     backgroundColor: 'black',
   },
   imagen:
   {
-    alignContent: "center",
-    top: 210,
     backgroundColor: "#FFFF", width: 150, height: 150, marginBottom: 1, borderRadius: 80,
     borderWidth: 10,
     borderColor: '#000'

@@ -5,8 +5,9 @@ const useAPI = () =>{
     const getRequest = async (URL) =>
     {
         try {
-            let Response = await fetch(URL)
-            return Response.json   
+            let response = await fetch(URL)
+            return response.json()  
+
         } catch (error) {
             console.log("Error: ", error)
         }

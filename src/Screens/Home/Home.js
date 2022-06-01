@@ -1,26 +1,35 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import useAPI from '../../Hooks/index'
 
  
 
-const Home = ()=>
+const Home = (props)=>
 {
 
+  const { navigate } = props
   const { getRequest } = useAPI()
-
-
+  const [pokemons, setPokemons] = useState([])
+  
   const loadPokemon = async () => 
   {
-    let result = await getRequest('')
-    console.log(result)
+    let result = await getRequest('https://pokeapi.co/api/v2/pokemon')
+    setPokemons(result.results)
+    
+    //console.log(result)
   }
 
-  loadPokemon()
+  useEffect( ()=> {
+
+    loadPokemon()
+
+  },[])
+
+  console.log("XD ",pokemons)
 
     return(
         <View style = {styles.container} >
-        <Text>Hola munddo!</Text>
+        {pokemons.map( pokemon => <Text> { pokemon.name }</Text> )}
         </View>
     )
 }
