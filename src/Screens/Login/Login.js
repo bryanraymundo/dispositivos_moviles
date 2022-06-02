@@ -22,7 +22,6 @@ const Login = (props) => {
         source={require("./googleicon.png")}
       />
     )
-
   }
 
   
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     width: 450,
-    height: 410,
+    height: 450,
     borderBottomColor: 'black',
     borderBottomWidth: 12
   },
